@@ -18,8 +18,8 @@
 | [Core](https://github.com/GillHD/agilframe-core) | Сервер на Node.js, API, организации, права, панель управления, редактор и Wiki |
 | [Web SDK](https://github.com/GillHD/agilframe-websdk) | Виджет, SDK, Web Component и клиентские контракты |
 | [Mobile SDK](https://github.com/GillHD/agilframe-mobile) | Android, iOS, Flutter, Capacitor и React Native |
-| [Ноды](https://github.com/GillHD/agilframe-nodes) | LiveKit SFU, TURN, Node Agent, STT, Edge и образы воркеров |
-| [Edge для внешних устройств](https://github.com/GillHD/agilframe-nodes/tree/main/agil/edge) | Контроллер на Node.js и FFmpeg для публикации MP4 в комнату через RTMP/RTMPS. Входит в репозиторий нод |
+| [Ноды](https://github.com/GillHD/agilframe-nodes) | LiveKit SFU, TURN, Node Agent, STT и образы воркеров |
+| [Edge для внешних устройств](https://github.com/GillHD/agilframe-edge) | Контроллер на Node.js и FFmpeg для публикации MP4 в комнату через RTMP/RTMPS |
 | [Развёртывание](https://github.com/GillHD/agilframe-deploy) | Самостоятельная установка Core через Docker Compose |
 | [Примеры](https://github.com/GillHD/agilframe-examples) | Рабочий пример встраивания комнаты в приложение |
 
@@ -34,7 +34,7 @@ git clone --recurse-submodules https://github.com/GillHD/agilframe.git
 cd agilframe
 ```
 
-Получатся каталоги `core/`, `websdk/`, `mobile/`, `nodes/`, `deploy/` и `examples/`. Каждый компонент также можно клонировать отдельно. Подмодули закреплены на совместимых коммитах. [Порядок обновления](docs/repositories.md)
+Получатся каталоги `core/`, `websdk/`, `mobile/`, `nodes/`, `edge/`, `deploy/` и `examples/`. Каждый компонент также можно клонировать отдельно. Подмодули закреплены на совместимых коммитах. [Порядок обновления](docs/repositories.md)
 
 ## Как работает AgilFrame
 

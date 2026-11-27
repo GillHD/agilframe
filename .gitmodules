@@ -16,3 +16,6 @@
 [submodule "examples"]
 	path = examples
 	url = https://github.com/GillHD/agilframe-examples.git
+[submodule "edge"]
+	path = edge
+	url = https://github.com/GillHD/agilframe-edge.git
