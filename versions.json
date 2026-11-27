@@ -1,0 +1,9 @@
+{
+  "core": "dcd58b4d32b298a22ca3ebb2a012bab6ff0cc913",
+  "websdk": "2b31da5a8a78847b98da67e63639fffb0c8afb3f",
+  "mobile": "afffbe118994097c5f4d462cf2e230430ba3b7b0",
+  "nodes": "375f46f7db533fcb376ed6044fb69a02c4ca3bbe",
+  "edge": "b2d68643a53e2a9c8f527c3fc07c50eff779210c",
+  "deploy": "3c7f2c27293dd2b38030f9e53004658077cd2445",
+  "examples": "203e802501ba373b53656ae0d6f2b1186718312b"
+}

@@ -1,4 +1,4 @@
-name: Verify component checkout
+name: Verify release and component integration
 on:
   push:
     branches: [main]
@@ -10,11 +10,36 @@ permissions:
 jobs:
   checkout:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           submodules: recursive
           persist-credentials: false
-      - run: |
-          git submodule status --recursive
-          git diff --exit-code --submodule
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Verify release pins and integration copies
+        run: node scripts/verify-release.mjs
+      - name: Validate the standalone Deploy configuration
+        working-directory: deploy
+        run: docker compose --env-file .env.example config --quiet
+      - name: Build Core and the browser client
+        working-directory: core
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+      - name: Prepare the media test services
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          docker pull redis:7-alpine
+          docker pull livekit/livekit-server:v1.13.11
+          docker pull livekit/ingress:v1.6.0
+      - name: Verify SDK join, Node Agent enrollment and Edge publication
+        working-directory: core
+        run: |
+          export CHROME_PATH="$(command -v google-chrome)"
+          export AGILFRAME_EDGE_ENTRY="$GITHUB_WORKSPACE/edge/agent/rtmp-publisher.mjs"
+          export AGILFRAME_NODE_ENTRY="$GITHUB_WORKSPACE/nodes/agil/infra/node-agent/agent.mjs"
+          node --import tsx agil/edge/test/rtmp-livekit-e2e.mjs
