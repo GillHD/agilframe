@@ -19,6 +19,7 @@
 | [Web SDK](https://github.com/GillHD/agilframe-websdk) | Виджет, SDK, Web Component и клиентские контракты |
 | [Mobile SDK](https://github.com/GillHD/agilframe-mobile) | Android, iOS, Flutter, Capacitor и React Native |
 | [Ноды](https://github.com/GillHD/agilframe-nodes) | LiveKit SFU, TURN, Node Agent, STT, Edge и образы воркеров |
+| [Edge для внешних устройств](https://github.com/GillHD/agilframe-nodes/tree/main/agil/edge) | Контроллер на Node.js и FFmpeg для публикации MP4 в комнату через RTMP/RTMPS. Входит в репозиторий нод |
 | [Развёртывание](https://github.com/GillHD/agilframe-deploy) | Самостоятельная установка Core через Docker Compose |
 | [Примеры](https://github.com/GillHD/agilframe-examples) | Рабочий пример встраивания комнаты в приложение |
 
