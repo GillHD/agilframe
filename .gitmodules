@@ -1,0 +1,18 @@
+[submodule "core"]
+	path = core
+	url = https://github.com/GillHD/agilframe-core.git
+[submodule "websdk"]
+	path = websdk
+	url = https://github.com/GillHD/agilframe-websdk.git
+[submodule "mobile"]
+	path = mobile
+	url = https://github.com/GillHD/agilframe-mobile.git
+[submodule "nodes"]
+	path = nodes
+	url = https://github.com/GillHD/agilframe-nodes.git
+[submodule "deploy"]
+	path = deploy
+	url = https://github.com/GillHD/agilframe-deploy.git
+[submodule "examples"]
+	path = examples
+	url = https://github.com/GillHD/agilframe-examples.git
