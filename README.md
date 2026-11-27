@@ -7,37 +7,53 @@
 
 # AgilFrame
 
-**Встраиваемые видеозвонки, трансляции и голосовые комнаты на WebRTC для своей инфраструктуры.** AgilFrame помогает встроить звонки в корпоративный портал, учебную платформу или клиентский продукт и управлять участниками, оформлением и обработкой данных из своей системы.
+Русский · [English](README.en.md)
 
-[Начать работу](#начать-работу) · [Документация](https://github.com/GillHD/agilframe-core/blob/main/docs/README.md) · [Доска AgilFrame](https://github.com/users/GillHD/projects/1) · [Правила вкладов](CONTRIBUTING.md)
+**AgilFrame добавляет видеозвонки, трансляции и голосовые комнаты в ваши приложения.** Встройте готовый виджет в корпоративный портал, учебную платформу или клиентский сервис. Для собственного интерфейса используйте Web SDK и API.
+
+AgilFrame развёртывается на вашей инфраструктуре. В панели администратора задаются права доступа и правила обработки данных, а в визуальном редакторе — оформление окна звонка.
+
+[Попробовать демо](https://agilframe.online/) · [Открыть вики](https://calls.guardify.ru/wiki/) · [Справочник API](https://calls.guardify.ru/docs) · [OpenAPI JSON](https://calls.guardify.ru/openapi.json)
+
+[Начать работу](#начать-работу) · [Документация в репозитории](https://github.com/GillHD/agilframe-core/blob/main/docs/README.md) · [Доска проекта](https://github.com/users/GillHD/projects/1) · [Как внести вклад](CONTRIBUTING.md)
+
+## Скриншоты
+
+![Лендинг AgilFrame с интерактивным демо](docs/screenshots/landing.png)
+
+![Окно видеозвонка AgilFrame в браузере](docs/screenshots/call.png)
+
+Демонстрационное видео Big Buck Bunny © 2008 Blender Foundation, CC BY 3.0. [Условия использования](https://agilframe.online/media/NOTICE.md)
 
 ## Репозитории
 
 | Компонент | Назначение |
 | --- | --- |
-| [Core](https://github.com/GillHD/agilframe-core) | Сервер на Node.js, API, организации, права, панель управления, редактор и Wiki |
-| [Web SDK](https://github.com/GillHD/agilframe-websdk) | Виджет, SDK, Web Component и клиентские контракты |
-| [Mobile SDK](https://github.com/GillHD/agilframe-mobile) | Android, iOS, Flutter, Capacitor и React Native |
-| [Ноды](https://github.com/GillHD/agilframe-nodes) | LiveKit SFU, TURN, Node Agent, STT и образы воркеров |
-| [Edge для встраиваемых систем](https://github.com/GillHD/agilframe-edge) | Агент для embedded Linux на Node.js и FFmpeg. Публикует MP4 в комнату через RTMP/RTMPS |
-| [Развёртывание](https://github.com/GillHD/agilframe-deploy) | Самостоятельная установка Core через Docker Compose |
-| [Примеры](https://github.com/GillHD/agilframe-examples) | Рабочий пример встраивания комнаты в приложение |
+| [Core](https://github.com/GillHD/agilframe-core) | Сервер на Node.js, API, управление организациями и правами доступа, панель администратора, редактор звонков и вики |
+| [Web SDK](https://github.com/GillHD/agilframe-websdk) | Веб-виджет, SDK для собственного интерфейса, веб-компонент и клиентские контракты |
+| [Мобильные SDK](https://github.com/GillHD/agilframe-mobile) | Комплекты средств разработки для Android, iOS, Flutter, Capacitor и React Native |
+| [Медианоды](https://github.com/GillHD/agilframe-nodes) | LiveKit SFU, TURN, Node Agent и образы сервисов обработки медиа, включая распознавание речи |
+| [Edge](https://github.com/GillHD/agilframe-edge) | Агент для встраиваемых устройств под управлением Linux. Передаёт MP4 в комнату через RTMP или RTMPS с помощью FFmpeg |
+| [Развёртывание](https://github.com/GillHD/agilframe-deploy) | Конфигурация Docker Compose для установки Core |
+| [Примеры](https://github.com/GillHD/agilframe-examples) | Самостоятельный веб-пример подключения к комнате |
 
 ## Начать работу
 
-- Чтобы запустить свою установку, откройте [развёртывание](https://github.com/GillHD/agilframe-deploy) и выполните шаги Docker Compose.
-- Чтобы изучить интеграцию, запустите Core и проверьте [веб-пример](https://github.com/GillHD/agilframe-examples) с комнатой и токеном участника.
-- Для разработки всего комплекта клонируйте общий репозиторий вместе с подмодулями.
+- **Установить Core.** Запустите платформу на своём сервере по инструкции для Docker Compose. [Развёртывание](https://github.com/GillHD/agilframe-deploy)
+- **Проверить интеграцию.** Запустите Core, создайте комнату и используйте токен участника в веб-примере. [Пример встраивания](https://github.com/GillHD/agilframe-examples)
+- **Скачать все компоненты для разработки.** Клонируйте этот репозиторий с подмодулями.
 
 ```sh
 git clone --recurse-submodules https://github.com/GillHD/agilframe.git
 cd agilframe
 ```
 
-Получатся каталоги `core/`, `websdk/`, `mobile/`, `nodes/`, `edge/`, `deploy/` и `examples/`. Каждый компонент также можно клонировать отдельно. Подмодули закреплены на совместимых коммитах. [Порядок обновления](docs/repositories.md)
+Git загрузит компоненты в каталоги `core/`, `websdk/`, `mobile/`, `nodes/`, `edge/`, `deploy/` и `examples/` на закреплённых коммитах. Каждый компонент можно клонировать отдельно. [Манифест версий](versions.json) · [Порядок обновления компонентов](docs/repositories.md)
 
 ## Как работает AgilFrame
 
-Core выдаёт токены комнат, проверяет права и назначает маршрут. WebRTC-клиенты подключаются напрямую или через SFU. TURN используется при выборе релейного соединения. Запись, публикация HLS и распознавание речи подключаются по требованиям установки. [Архитектура Core](https://github.com/GillHD/agilframe-core/blob/main/agil/core/docs/architecture.md) · [Масштабирование](https://github.com/GillHD/agilframe-core/blob/main/agil/core/docs/scaling.md)
+Core выдаёт токены участникам, проверяет права доступа и выбирает медиамаршрут. Клиенты передают аудио, видео и демонстрацию экрана по WebRTC напрямую либо через SFU. TURN ретранслирует трафик, когда выбран релейный маршрут. Серверная запись, трансляции HLS и распознавание речи требуют соответствующих медиасервисов. [Архитектура Core](https://github.com/GillHD/agilframe-core/blob/main/agil/core/docs/architecture.md) · [Масштабирование](https://github.com/GillHD/agilframe-core/blob/main/agil/core/docs/scaling.md)
 
-Исходный код доступен по [PolyForm Noncommercial 1.0.0](LICENSE). Коммерческие права оформляются [отдельным договором](https://github.com/GillHD/agilframe-core/blob/main/agil/core/docs/commercial-license.md). [Уведомления](NOTICE)
+## Лицензия
+
+Собственный код AgilFrame доступен на условиях PolyForm Noncommercial 1.0.0. Коммерческое использование лицензируется отдельно. Для сторонних компонентов действуют их собственные условия. [Лицензия](LICENSE) · [Коммерческое использование](https://github.com/GillHD/agilframe-core/blob/main/agil/core/docs/commercial-license.md) · [Уведомления](NOTICE)

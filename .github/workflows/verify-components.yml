@@ -9,6 +9,7 @@ permissions:
   contents: read
 jobs:
   checkout:
+    name: Release manifest and integration smoke test
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
